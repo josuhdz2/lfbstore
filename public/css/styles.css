@@ -29,7 +29,19 @@ a:hover{
 }
 #principal{
     margin-top: 3.125em;
-    min-height: 28.125em;
+}
+.espacio{
+    min-height: calc(100vh - 1em);
+}
+.producto-color{
+    background: -webkit-linear-gradient(90deg, #6859ea 10%, #6acbe0 90%);
+    background: -moz-linear-gradient(90deg, #6859ea 10%, #6acbe0 90%);
+    background: linear-gradient(90deg, #6859ea 10%, #6acbe0 90%);
+    color: white;
+}
+.producto{
+    padding-top: 3em;
+    padding-bottom: 3em;
 }
 #pie{
     background: #3b3b3b;
