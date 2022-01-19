@@ -5,7 +5,7 @@
 }
 body{
     font-family: 'Rubik', sans-serif;
-    font-size: 1em;
+    font-size: 100%;
     color: #707070;
     text-align: center;
 }
@@ -16,6 +16,19 @@ h1{
 h3{
     color: #3b3b3b;
     font-size: 1.375em;
+}
+@media screen and (max-width:400px){
+    h1{
+        font-size: 1em;
+    }
+}
+@media screen and (max-width:700px){
+    h1{
+        font-size: 1.5em;
+    }
+}
+.borde{
+    border: #6984e6 thin solid;
 }
 #cabeza{
     background: #ececec;
@@ -47,4 +60,7 @@ a:hover{
     background: #3b3b3b;
     color:white;
     height: 4.6875em;
+}
+img{
+    max-width: 100%;
 }
