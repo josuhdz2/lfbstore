@@ -1,0 +1,56 @@
+<%-include('templates/iniciohtml.ejs')%>
+<%-include('templates/menu.ejs')%>
+<div class="container col-8">
+    <h1>Carrito de compras</h1>
+    <br>
+    <form>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Producto</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Eliminar</th>
+            <th scope="col">Totales</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%
+          var i=0;
+          items.forEach((pro)=>{
+          %>
+          <tr>
+            <th><img src="/galeria/producto/<%=pro.imagen%>" width="70px"></th>
+            <td><%=pro.nombre%></td>
+            <td><div><input id="<%=pro.id%>" type="number" min="1" max="<%=pro.stock%>" class="form-control cantidad" value="<%=pro.cant%>"></div></td>
+            <td><div class="text-center"><a class="btn-close" href="/catalogo/eliminaritem/<%=pro.id%>"></a></div></a></td>
+            <td id="canmod">$<%=pro.sub%>.00</td>
+          </tr>
+          <%
+          i++;
+          });
+          %>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <td><div class="text-end">Costo de envió</div></td>
+            <td><h4>$100.00</h4></td>
+          </tr>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th><div class="text-end">Total de la compra:</div></th>
+            <th><h4>$<%=totalcom%>.00</h4></th>
+          </tr>
+        </tfoot>
+      </table>
+      <br>
+      <a class="btn btn-success" href="/ventas">Confirmar compra</a>
+    </form>
+</div>
+<script src="/scripts/carrito.js"></script>
+<%-include('templates/finhtml.ejs')%>

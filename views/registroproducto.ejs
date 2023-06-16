@@ -1,0 +1,35 @@
+<%-include('templates/iniciohtml.ejs')%>
+<div class="container">
+    <br>
+    <h1>Ingresa datos del nuevo producto</h1>
+    <br>
+    <form action="/catalogo/registrar" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Nombre del producto</label>
+            <input type="text" class="form-control" id="nomreg" name="nomreg" placeholder="Nombre Producto">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Descripción del producto</label>
+            <textarea class="form-control" id="desreg" name="desreg"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Categoría del producto</label>
+            <input class="form-control" type="text" id="catreg" name="catreg"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Precio</label>
+            <input type="number" class="form-control" min="0" id="prereg" name="prereg" placeholder="12">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Cantidad disponible</label>
+            <input type="number" class="form-control" min="0" id="storeg" name="storeg" placeholder="12">
+        </div>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Ingresa la fotografiá del producto</label>
+            <input class="form-control" type="file" accept="image/*" id="imgreg" name="imgreg">
+        </div>
+        <button type="submit" class="btn btn-outline-success">Registrar</button>
+        <a href="/catalogo/admin" class="btn btn-outline-secondary">Cancelar</a>
+    </form>
+</div>
+<%-include('templates/finhtml.ejs')%>

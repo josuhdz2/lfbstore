@@ -1,0 +1,46 @@
+<%-include('templates/iniciohtml.ejs')%>
+<div class="container"><br>
+    <h1>Lista de todas las ventas</h1><br>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID venta</th>
+            <th scope="col">Info Cliente</th>
+            <th scope="col">Producto y cantidad</th>
+            <th scope="col">Total</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+            <%
+            var i=1;
+            ventas.forEach((ven)=>{
+            %>
+          <tr>
+            <th><%=ven._id%></th>
+            <td><a class="btn btn-outline-secondary" href="/ventas/infocli/<%=ven.id_usu%>">Info Cliente</a></td>
+            <td>
+              <%
+              var a=1;
+              ven.inf_ven.forEach((obj)=>{
+              %>
+              <h6><a href="/catalogo/producto/<%=obj.idprod%>"><%=obj.idprod%></a>: <%=obj.cantidad%></h6>
+              <%
+            a++;
+            });
+              %>
+            </td>
+            <td>$<%=ven.tot_ven%>.00</td>
+            <td><%=ven.estado%></td>
+            <td><a class="btn btn-outline-secondary" href="/ventas/codigoenv/<%=ven._id%>">Cambiar estado</a></td>
+          </tr>
+          <%
+            i++;
+            });
+          %>
+        </tbody>
+      </table>
+      <a class="btn btn-secondary" href="/catalogo/admin">Salir</a>
+</div>
+<%-include('templates/finhtml.ejs')%>

@@ -1,0 +1,34 @@
+<%-include('templates/iniciohtml.ejs')%>
+<div class="container">
+    <h1>Modificar producto</h1>
+    <form method="POST" action="/catalogo/modificacionpro">
+        <input type="hidden" id="idmod" name="idmod" value="<%=producto._id%>">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Nombre del producto</label>
+            <input type="text" class="form-control" id="nommod" name="nommod" placeholder="Nombre Producto" value="<%=producto.nom_pro%>">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Descripción del producto</label>
+            <textarea class="form-control" id="desmod" name="desmod" placeholder="Descripcion"><%=producto.des_pro%></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Cateoria del producto</label>
+            <select id="catmod" name="catmod" class="form-select" aria-label="Default select example">
+                <option selected><%=producto.cat_pro%></option>
+                <option value="Accesorios">Accesorios</option>
+                <option value="Refacciones">Refacciones</option>
+              </select>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Precio</label>
+            <input type="number" class="form-control" min="0" id="premod" name="premod" placeholder="12" value="<%=producto.pre_pro%>">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Cantidad disponible</label>
+            <input type="number" class="form-control" min="0" id="stomod" name="stomod" placeholder="12" value="<%=producto.sto_pro%>">
+        </div>
+        <button type="submit" class="btn btn-outline-success">Registrar</button>
+        <a class="btn btn-success" href="/catalogo/listapro">Cancelar</a>
+    </form>
+</div>
+<%-include('templates/finhtml.ejs')%>

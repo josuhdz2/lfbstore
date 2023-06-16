@@ -1,0 +1,51 @@
+<%-include('templates/iniciohtml.ejs')%>
+<%-include('templates/menu.ejs')%>
+<div class="container">
+    <h1>Por favor ingresa los datos que deseas modificar.</h1>
+    <h4>Nombre a editar: <%=modusu.nom_usu%></h4>
+    <form action="/modificar" method="POST">
+        <input type="hidden" id="idmod" name="idmod" value="<%=modusu._id%>">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Nombre Completo</label>
+            <input type="text" class="form-control" id="nommod" name="nommod" placeholder="Nombre Apellido" value="<%=modusu.nom_usu%>">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Edad</label>
+            <input type="number" class="form-control" min="0" id="edamod" name="edamod" placeholder="18" value="<%=modusu.eda_usu%>">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="emamod" name="emamod" placeholder="name@example.com" value="<%=modusu.ema_usu%>">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="pasmod" name="pasmod" value="<%=passwd%>">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Entidad</label>
+            <input type="text" class="form-control" id="entmod" name="entmod" placeholder="Queretaro" value="<%=modusu.ent_usu%>">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Municipio</label>
+            <input type="text" class="form-control" id="munmod" name="munmod" placeholder="San Juan Del Rio" value="<%=modusu.mun_usu%>">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Colonia</label>
+            <input type="text" class="form-control" id="colmod" name="colmod" placeholder="La Magdalena" value="<%=modusu.col_usu%>">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Calle</label>
+            <input type="text" class="form-control" id="calmod" name="calmod" placeholder="Av. Universidad" value="<%=modusu.cal_usu%>">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Número</label>
+            <input type="text" class="form-control" id="nummod" name="nummod" placeholder="13" value="<%=modusu.num_usu%>">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Teléfono (10 dígitos)</label>
+            <input type="text" class="form-control" id="telmod" name="telmod" placeholder="4142732327" value="<%=modusu.tel_usu%>">
+        </div>
+        <button type="submit" class="btn btn-success">Modificar información</button>
+    </form>
+</div>
+<%-include('templates/finhtml.ejs')%>

@@ -1,0 +1,50 @@
+<%-include('templates/iniciohtml.ejs')%>
+<%-include('templates/menu.ejs')%>
+<div class="container">
+    <h1>Información sobre mi cuenta</h1>
+    <br>
+    <h4>Nombre: <%=datosusu.nom_usu%></h4>
+    <h4>Email: <%=datosusu.ema_usu%></h4>
+    <br>
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr><div class="text-center"><h2>Compras y pedidos</h2></div></tr>
+            <tr>
+                <th># Compra</th>
+                <th>Productos y cantidad</th>
+                <th>Total</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%
+            var i=1
+            compras.forEach((com)=>
+            {
+            %>
+            <tr>
+                <th><%=i%></th>
+                <td>
+                    <%
+                    var a=1;
+                    com.inf_ven.forEach((obj)=>{
+                    %>
+                    <div class="text-start"><a href="/catalogo/producto/<%=obj.idprod%>"><img class="mb-2" src="/galeria/producto/<%=obj.idprod%>.jpeg" width="100px"></a> : <%=obj.cantidad%></div>
+                    <%
+                    a++;
+                    });
+                    %>
+                </td>
+                <td>$<%=com.tot_ven%>.00</td>
+                <td><%=com.estado%></td>
+            </tr>
+            <%
+            i++;
+            });
+            %>
+        </tbody>
+    </table>
+    <a class="btn btn-secondary" href="/logout">Cerrar sesión</a>
+    <a class="btn btn-primary" href="/modificarusu/<%=datosusu._id%>">Modificar</a>
+</div>
+<%-include('templates/finhtml.ejs')%>

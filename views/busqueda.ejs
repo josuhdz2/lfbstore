@@ -1,0 +1,36 @@
+<%-include('templates/iniciohtml.ejs')%>
+<%-include('templates/menu.ejs')%>
+<div class="container">
+    <div class="text-center">
+        <h1>Resultados para: <%=resultados%></h1>
+    </div>
+    <br>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        <%
+            var i=1;
+            productos.forEach((producto)=>{
+        %>
+        <!--entrada del ciclo de javascript-->
+        <div class="col">
+          <div  class="card">
+            <img src="/galeria/producto/<%=producto.ima_pro%>" class="card-img-top" width="25%">
+            <div class="card-body">
+              <h5 class="card-title"><%=producto.nom_pro%></h5>
+              <div class="card-text">
+                <%=producto.des_pro%><br><br>
+                <h5>Precio: $<%=producto.pre_pro%>.00</h5>
+              </div>
+              <div class="card-footer text-center">
+                <a class="btn btn-success" href="/catalogo/producto/<%=producto.id%>">Ver producto</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%
+            i++;
+            });
+        %>
+        <!--fin del ciclo-->
+    </div>
+</div>
+<%-include('templates/finhtml.ejs')%>

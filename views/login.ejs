@@ -1,0 +1,29 @@
+<%-include('templates/iniciohtml.ejs')%>
+<div class="row mt-5">
+    <div class="col"></div>
+    <div class="col">
+        <form action="/login" method="POST">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h1>Inicia sesión o regístrate.</h1>
+                </div>
+                <div class="card-body">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" autocomplete="off" name="emalog" id="emalog" placeholder="name@example.com">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" minlength="8" autocomplete="off" name="paslog" id="paslog" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="/registrousuario" class="form-control mb-3 btn btn-outline-primary">Registrate</a>
+                    <button class="form-control mb-3 btn btn-outline-success" type="submit">Iniciar Sesión</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col"></div>
+</div>
+<%-include('templates/finhtml.ejs')%>

@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="/galeria/cabezera.png" alt="" height="30" class="d-inline-block align-text-top">
+            LFB
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link <%=a1%>" aria-current="page" href="/">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <%=a2%>" href="/catalogo">Catálogo</a>
+                </li>
+            </ul>
+            <form class="d-flex" action="/catalogo/buscar" method="POST">
+                <input class="form-control me-2" type="text" placeholder="Búsqueda" aria-label="Search" id="busqueda" name="busqueda">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+            <div class="row px-4"></div>
+            <a href="/catalogo/carrito" class="btn"><img src="/galeria/carrito.jpg" width="30">
+                <span class="top-0 start-20 translate-middle badge rounded-pill bg-danger">
+                    <%=numite%>
+                </span>
+            </a>
+            <a class="btn" href="/micuenta"><%=usuariomenu%></a>
+        </div>
+    </div>
+</nav>

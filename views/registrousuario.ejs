@@ -1,0 +1,48 @@
+<%-include('templates/iniciohtml.ejs')%>
+<div class="container">
+    <br><h1>Regístrate</h1><br>
+    <form action="/registrar" method="POST">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Nombre Completo</label>
+            <input type="text" class="form-control" id="nomreg" name="nomreg" placeholder="Nombre Apellido">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Edad</label>
+            <input type="number" class="form-control" min="0" id="edareg" name="edareg" placeholder="18">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="emareg" name="emareg" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Password</label>
+            <input type="password" minlength="8" class="form-control" id="pasreg" name="pasreg">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Entidad</label>
+            <input type="text" class="form-control" id="entreg" name="entreg" placeholder="Querétaro">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Municipio</label>
+            <input type="text" class="form-control" id="munreg" name="munreg" placeholder="San Juan Del Rio">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Colonia</label>
+            <input type="text" class="form-control" id="colreg" name="colreg" placeholder="La magdalena">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Calle</label>
+            <input type="text" class="form-control" id="calreg" name="calreg" placeholder="Av. Universidad">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Número exterior</label>
+            <input type="text" class="form-control" id="numreg" name="numreg" placeholder="12">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Teléfono (10 dígitos)</label>
+            <input type="text" class="form-control" id="telreg" name="telreg" placeholder="4142732327">
+        </div>
+        <button type="submit" class="btn btn-success">Regístrate</button>
+    </form>
+</div>
+<%-include('templates/finhtml.ejs')%>

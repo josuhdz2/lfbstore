@@ -1,0 +1,31 @@
+<%-include('templates/iniciohtml.ejs')%>
+<%-include('templates/menu.ejs')%>
+<script src="/scripts/carrito.js"></script>
+<div class="container">
+    <br><br>
+    <div class="card">
+        <div class="row g-0">
+            <div class="col-8">
+                <img src="/galeria/producto/<%=producto.ima_pro%>" class="img-fluid rounded-start">
+            </div>
+            <div class="col">
+                <div class="card-body">
+                    <h3 class="card-title"><%=producto.nom_pro%></h3>
+                    <p class="card-text"><%=producto.des_pro%></p>
+                    <h4>Precio: $<%=producto.pre_pro%>.00</h4>
+                    <div class="card-footer">
+                        <form action="/catalogo/agregarpro" method="POST">
+                            <input type="hidden" value="<%=producto._id%>" name="idpro" id="idpro">
+                            <input type="hidden" value="<%=producto.pre_pro%>" name="preagr" id="preagr">
+                            <label for="exampleFormControlInput1" class="form-label">Cantidad (<%=producto.sto_pro%> disponibles)</label>
+                            <input class="form-control" type="number" min="1" max="<%=producto.sto_pro%>" id="canagr" name="canagr" value="1">
+                            <br>
+                            <button type="submit" onclick="mensaje()" class="btn btn-dark col-12">Añadir al carrito</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%-include('templates/finhtml.ejs')%>

@@ -1,0 +1,17 @@
+<%-include('templates/iniciohtml.ejs')%>
+<div class="container col-6">
+    <div class="text-center"><br>
+        <h1>Información del cliente</h1><br>
+        <h4>Nombre: <%=infousu.nom_usu%></h4>
+        <h4>Entidad: <%=infousu.ent_usu%></h4>
+        <h4>Municipio: <%=infousu.mun_usu%></h4>
+        <h4>Colonia: <%=infousu.col_usu%></h4>
+        <h4>Calle: <%=infousu.cal_usu%></h4>
+        <h4>Numero exterior: <%=infousu.num_usu%></h4><br>
+        <h2>Información de contacto</h2><br>
+        <h4>Correo electrónico: <%=infousu.ema_usu%></h4>
+        <h4>Teléfono: <%=infousu.tel_usu%></h4><br>
+        <a class="btn btn-secondary" href="/ventas/listaventas">Salir</a>
+    </div>
+</div>
+<%-include('templates/finhtml.ejs')%>

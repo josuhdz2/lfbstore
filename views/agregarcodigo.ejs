@@ -1,0 +1,12 @@
+<%-include('templates/iniciohtml.ejs')%>
+<div class="container"><br>
+    <div class="text-center">
+        <h1>Ingresa la información del envio.</h1><br>
+        <form action="/ventas/cambiarestado" method="POST">
+            <input type="hidden" id="idenv" name="idenv" value="<%=idenv%>">
+            <input class="mb-3 form-control" type="text" id="codenv" name="codenv" placeholder="Código de seguimiento">
+            <button type="submit" class="btn btn-outline-success mb-3">Confirmar código</button>
+        </form>
+    </div>
+</div>
+<%-include('templates/finhtml.ejs')%>

@@ -1,0 +1,38 @@
+<%-include('templates/iniciohtml.ejs')%>
+<div class="container">
+    <h1 class="mt-2">Tabla con todos los productos registrados</h1>
+    <br><br>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+        <%
+            var i=1;
+            productos.forEach((producto)=>{
+        %>
+          <tr>
+            <th><%=producto._id%></th>
+            <th><%=producto.nom_pro%></th>
+            <td><%=producto.sto_pro%></td>
+            <td><%=producto.estado%></td>
+            <td>
+                <a class="btn" href="/catalogo/modpro/<%=producto.id%>">Modificar</a>
+            </td>
+          </tr>
+        <%
+          i++;
+          });
+        %>
+        </tbody>
+      </table>
+      <div class="alert alert-dark">Si se registra un producto con 0 como stock, se marcará como no disponible y no aparecerá en el catálogo.</div>
+      <a class="btn btn-secondary" href="/catalogo/admin">Salir</a>
+</div>
+<%-include('templates/finhtml.ejs')%>
